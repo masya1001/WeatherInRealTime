@@ -1,24 +1,44 @@
-svg {
-	font-family: "Rubik Mono One", sans-serif;
-	width: 100%; height: 100%;
-}
-svg text {
-	animation: stroke 3s infinite alternate;
-	stroke-width: 2;
-	stroke: #365FA0;
-	font-size: 65px;
-}
-@keyframes stroke {
-	0%   {
-		fill: rgba(72,138,204,0); stroke: rgba(54,95,160,1);
-		stroke-dashoffset: 25%; stroke-dasharray: 0 50%; stroke-width: 2;
-	}
-	70%  {fill: rgba(72,138,204,0); stroke: rgba(54,95,160,1); }
-	80%  {fill: rgba(72,138,204,0); stroke: rgba(54,95,160,1); stroke-width: 3; }
-	100% {
-		fill: rgba(72,138,204,1); stroke: rgba(54,95,160,0);
-		stroke-dashoffset: -25%; stroke-dasharray: 50% 0; stroke-width: 0;
-	}
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.wrapper {background-color: #FFFFFF};
+.hero-content {
+    flex: 1;
+}
+
+.animated-title {
+    font-family: 'Rubik Mono One', monospace;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 3s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: white;
+    opacity: 0.9;
+}
+
+.weather-icon {
+    font-size: 6rem;
+    color: white;
+    opacity: 0.8;
+    animation: float 3s ease-in-out infinite;
+}
